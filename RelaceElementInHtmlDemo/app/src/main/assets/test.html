@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>test</title>
+<meta http-equiv="content-Type" content="text/html;charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<style type="text/css">
+.container{ margin:0 auto; width:300px; overflow:hidden} 
+.container img{ float:left; width:100px; height:100px} 
+.container .right{ float:right; width:180px; text-align:left} 
+.container .right h3{ height:20px; line-height:20px; font-family:"Microsoft YaHei"; font-size:16px; overflow:hidden;} 
+.container .right div{ padding-top:0px; height:50px; overflow:hidden}
+</style>
+</head>
+<body>
+<div class="container"> 
+    <img id="imageHolder" src="./img.jpeg"/> 
+    <div class="right">
+        <h3>我是一个标题好吗</h3> 
+        <div>无论事态变迁，你总有一颗人仰马翻的少年心</div> 
+    </div> 
+</div>
+<script type="text/javascript">
+var jsFun = {
+  // 测量图片的大小和位置
+  measureImagePlaceHolder: function () {
+    var img = document.getElementById("imageHolder");
+    var left = img.getBoundingClientRect().left + img.scrollLeft;
+    var top = img.getBoundingClientRect().top + img.scrollTop;
+    var width = img.getBoundingClientRect().right - left;
+    var height = img.getBoundingClientRect().bottom - top;
+    console.log("width = " + width + ", height = " + height);
+    console.log("left = " + left + ", top = " + top);
+    JavaFun.replaceImgWithImageView(left, top, width, height);
+  }
+}
+</script>
+</body>
+</html>
